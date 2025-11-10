@@ -12,6 +12,23 @@ export default function HomeSection() {
                 <div>Frontend Developer</div>
 
             </div>
+            <div className="flex-1 flex items-center justify-center md:justify-end">
+                <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-2xl bg-black/30">
+
+                    <video
+                        width="100%"
+                        height="auto"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                    >
+                        <source src="/static/badgeAnim.webm" type="video/webm" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
         </section>
     );
 }
