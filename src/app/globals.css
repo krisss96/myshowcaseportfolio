@@ -1,0 +1,42 @@
+@import "tailwindcss/preflight";
+
+@font-face {
+    font-family: 'Fasdeco';
+    src: url('../../public/fonts/Fasdeco.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@tailwind utilities;
+
+html, body {
+    background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
+    background-blend-mode: overlay;
+
+}
+
+.navbar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-links > li {
+  display: inline-block;
+  margin-right: 2rem;
+  margin-left: 0;
+}
+
+.navbar-links > li:last-child {
+  margin-right: 0;
+}
+
+.navbar-links a {
+  display: inline-block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
