@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
         {/* w-full - makes the element span the full viewport width */}
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div id="navbar-bg" className="max-w-7xl mx-auto px-6 py-4">
             {/* max-w-7xl - limits the maximum width of the container */}
             {/* mx-auto - centers the container horizontally */}
             {/* px-6 - horizontal padding */}
@@ -17,8 +17,8 @@ export default function Navbar() {
             <Image
               src="/static/logo.svg"
               alt="Logo"
-              width={110}
-              height={110}
+              width={150}
+              height={150}
               className="w-16 h-16"
               priority
             />
@@ -30,13 +30,13 @@ export default function Navbar() {
               {/* ml-auto - pushes the links to the right */}
               {/* navbar-links - custom class for additional styling if needed */}
             <li className="inline-block">
-              <a href="#projects" className="px-3 py-1 text-black">PROJECTS</a>
+              <a href="#projects" className="px-3 py-1  text-black font-[Afante]">PROJECTS</a>
             </li>
             <li className="inline-block">
-              <a href="#about" className="px-3 py-1 text-black">ABOUT</a>
+              <a href="#about" className="px-3 py-1 text-black font-[Afante]">ABOUT</a>
             </li>
             <li className="inline-block">
-              <a href="#contacts" className="px-3 py-1 text-black">CONTACTS</a>
+              <a href="#contacts" className="px-3 py-1 text-black font-[Afante]">CONTACTS</a>
             </li>
           </ul>
         </div>
