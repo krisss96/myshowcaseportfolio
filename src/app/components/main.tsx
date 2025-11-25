@@ -16,7 +16,7 @@ export default function HomeSection() {
     return (
         <section
             id="home"
-            className="flex flex-row md:flex-row items-center justify-center md:justify-between min-h-screen w-full mx-auto px-8 md:px-16 max-w-none pt-32 pb-20">
+            className=" section-background flex flex-row md:flex-row items-center justify-center md:justify-between min-h-screen w-full mx-auto px-8 md:px-16 max-w-none pt-32 pb-20">
             {/* max-w-none - allows the section to span the full width of the viewport */}
             {/* pt - padding-top */}
             {/* pb - padding-bottom */}

@@ -1,8 +1,10 @@
+"use client";
+
 export default function ProjectsSection() {
     return (
         <section
             id="projects"
-            className="min-h-screen w-full container mx-auto px-8 md:px-16 max-w-7xl py-20">
+            className=" section-background min-h-screen w-full container mx-auto px-8 md:px-16 max-w-7xl py-20">
             <h2 className="text-6xl md:text-7xl font-[Fasdeco] text-center md:text-left mb-12">
                 My <span className="font-sans font-bold">Projects</span>
             </h2>

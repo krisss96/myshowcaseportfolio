@@ -17,14 +17,46 @@
 }
 
 @tailwind utilities;
+ /* might use later
+ background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
+    background-blend-mode: overlay;
+
+*/
 
 html, body {
-    background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
-    background-blend-mode: overlay;
+
     min-height: 100vh;
     overscroll-behavior-y: none;
     overscroll-behavior-x: none;
     -webkit-overflow-scrolling: touch;
+}
+
+/* Scrolling effect */
+
+/* Makes the container stick to the top of the viewport until pushed out */
+.sticky-section {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background for each section */
+.section-background {
+    background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
+    background-blend-mode: overlay;
+    transition: background 0.5s ease;
+}
+
+
+#home.section-bg { background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
+}
+#projects.section-bg { background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
+}
+#about.section-bg { background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
+}
+#contacts.section-bg {background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
 }
 
 .navbar-links {
