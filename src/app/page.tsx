@@ -7,8 +7,6 @@ export default function Home() {
     return (
         <main>
             {/* 'position: sticky' keeps it in view while the next one scrolls up.
-              Increasing 'z-index'; ensures the next section
-              slides ON TOP of the previous one, creating the "card stack" effect.
             */}
 
             <div className="sticky-section z-10">

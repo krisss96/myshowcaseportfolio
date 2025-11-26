@@ -1,5 +1,6 @@
 @import "tailwindcss/preflight";
- /* Importing custom fonts */
+
+/* fonts */
 @font-face {
     font-family: 'Fasdeco';
     src: url('../../public/fonts/Fasdeco.otf') format('opentype');
@@ -17,37 +18,31 @@
 }
 
 @tailwind utilities;
- /* might use later
- background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
-    background-blend-mode: overlay;
-
-*/
 
 html, body {
-
     min-height: 100vh;
     overscroll-behavior-y: none;
     overscroll-behavior-x: none;
     -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: 0;
 }
 
 /* Scrolling effect */
 
-/* Makes the container stick to the top of the viewport until pushed out */
 .sticky-section {
     position: sticky;
     top: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Background for each section */
-
 .section-background {
     --spot-x: 20%;
     --spot-y: 10%;
-
     background: radial-gradient(circle 70rem at var(--spot-x) var(--spot-y), rgb(220, 200, 200), rgba(37,4,4,1)), rgba(37,4,4,1);
 }
 
@@ -75,28 +70,28 @@ html, body {
 
 /* Nav Styling */
 .navbar-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .navbar-links > li {
-  display: inline-block;
-  margin-right: 2rem;
-  margin-left: 0;
+    display: inline-block;
+    margin-right: 2rem;
+    margin-left: 0;
 }
 
 .navbar-links > li:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .navbar-links a {
-  display: inline-block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+    display: inline-block;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
 
 #navbar-bg {
@@ -104,14 +99,13 @@ html, body {
     -webkit-backdrop-filter: blur(10px) saturate(140%);
     backdrop-filter: blur(10px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.08);
-
 }
-
 
 #navbar-bg .navbar-links a {
     font-size: 2.5rem;
-
 }
+
+
 /* Main Page Styling */
 #header-main {
     font-size: 12.4rem;
@@ -129,14 +123,178 @@ html, body {
 #main-text.active {
     transform: translateX(0);
     opacity: 1;
-
-
 }
+
 
 /* Projects Page Styling */
 
 .projects-header {
     font-size: 9.6rem;
-    margin-left: 5rem;
-    margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Carousel animation boxes */
+
+.sliderContainer {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* allow taller cards to expand naturally */
+    overflow: visible;
+    --w: min(25vw, 18rem);
+    --ratio: 1 / 1;
+    --dur: 0.6s; /*  transition duration */
+    --ease: cubic-bezier(0.2, 0.6, 0.35, 1); /* easing function */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    cursor: pointer;
+    color: white;
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.3s; /* Smooth hover effect */
+    padding: 2rem;
+}
+
+.btn:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+}
+
+.btn svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.prev { left: 5%; }
+.next { right: 5%; }
+
+
+.stack {
+    display: grid;
+    place-items: center; /* Center items */
+    width: var(--w); /* Width of the cards - responsive */
+    aspect-ratio: var(--ratio); /* keeps container square */
+    perspective: 50rem;
+}
+
+.stack > * { /* argets every direct child of the .stack element */
+    grid-area: 1 / -1; /* all children overlap */
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* prevents clicks on stacked items */
+    transition: all var(--dur) var(--ease); /*  animate any animatable property that changes; transition-duration: var(--dur)-how long the animation lasts; transition-timing-function: var(--ease) - easing curve sition-delay */
+}
+
+
+.card {
+    border-radius: 0.1rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.5);
+    transform: translateX(0) scale(1);
+    aspect-ratio: 1 / 1;
+
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop to fill without distortion */
+}
+
+
+.info {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+    transform: translateZ(2rem);
+}
+
+.info h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #fff;
+}
+
+.info h2 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #eee;
+}
+
+
+.info > * { /* targets every direct child of the .info element */
+    transform: translateY(100%); /* moves each child down by 100% of its own height, so they start positioned off the visible area */
+    opacity: 0;
+    transition: all var(--dur) var(--ease);
+}
+
+/* States */
+/* show + enable interactions + stacking for center item  */
+.card[data-state="center"], .info[data-state="center"] {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.card[data-state="center"] {
+    transform: scale(1.2);
+    filter: brightness(1);
+}
+
+.info[data-state="center"] > * { /* reveal .info children by sliding/fading them in */
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+/* Next */
+/*  minimal: visibility + stacking for next/prev */
+.card[data-state="next"], .info[data-state="next"] {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* position/rotation (required for the sliding/3D effect) */
+.card[data-state="next"] {
+    transform: translateX(110%) rotateY(-45deg);
+    filter: brightness(0.5);
+}
+
+.info[data-state="next"] {
+    transform: translateX(110%) rotateY(-45deg) translateZ(2rem);
+}
+
+/* Prev */
+.card[data-state="prev"], .info[data-state="prev"] {
+    opacity: 1;
+    z-index: 1;
+}
+
+.card[data-state="prev"] {
+    transform: translateX(-110%) rotateY(45deg);
+    filter: brightness(0.5);
+}
+
+.info[data-state="prev"] {
+    transform: translateX(-110%) rotateY(45deg) translateZ(2rem);
 }
