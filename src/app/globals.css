@@ -43,22 +43,37 @@ html, body {
 }
 
 /* Background for each section */
+
 .section-background {
-    background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
-    background-blend-mode: overlay;
-    transition: background 0.5s ease;
+    --spot-x: 20%;
+    --spot-y: 10%;
+
+    background: radial-gradient(circle 70rem at var(--spot-x) var(--spot-y), rgb(220, 200, 200), rgba(37,4,4,1)), rgba(37,4,4,1);
 }
 
 
-#home.section-bg { background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
-}
-#projects.section-bg { background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
-}
-#about.section-bg { background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
-}
-#contacts.section-bg {background: radial-gradient(circle 70rem at 20% 10%, rgba(255,255,255,0.04), rgba(37,4,4,1));
+#home.section-background {
+    --spot-x: 20%;
+    --spot-y: 10%;
 }
 
+#projects.section-background {
+    --spot-x: 80%;
+    --spot-y: 70%;
+}
+
+#about.section-background {
+    --spot-x: 60%;
+    --spot-y: 20%;
+}
+
+#contacts.section-background {
+    --spot-x: 30%;
+    --spot-y: 40%;
+}
+
+
+/* Nav Styling */
 .navbar-links {
   list-style: none;
   padding: 0;
@@ -116,4 +131,12 @@ html, body {
     opacity: 1;
 
 
+}
+
+/* Projects Page Styling */
+
+.projects-header {
+    font-size: 9.6rem;
+    margin-left: 5rem;
+    margin-top: 7rem;
 }

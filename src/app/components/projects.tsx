@@ -5,7 +5,7 @@ export default function ProjectsSection() {
         <section
             id="projects"
             className=" section-background min-h-screen w-full container mx-auto px-8 md:px-16 max-w-7xl py-20">
-            <h2 className="text-6xl md:text-7xl font-[Fasdeco] text-center md:text-left mb-12">
+            <h2 className=" projects-header text-6xl md:text-7xl font-[Fasdeco] text-center md:text-left mb-12">
                 My <span className="font-sans font-bold">Projects</span>
             </h2>
 
