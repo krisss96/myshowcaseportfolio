@@ -2,18 +2,20 @@
 "use client";
 
 import { useState } from 'react';
+import Link from "next/link";
 
 interface Slide {
     id: number;
     img: string;
     title: string;
     subtitle: string;
+    link: string;
 }
 
 const slides: Slide[] = [
-    { id: 1, img: "/static/trialmockup.png", title: "Virtual gallery", subtitle: "2025" },
-    { id: 2, img: "/static/trialmockup.png", title: "Belco Alliance website", subtitle: "2025"},
-    { id: 3, img: "/static/trialmockup.png", title: "SheLab", subtitle: "2024"}
+    { id: 1, img: "/static/trialmockup.png", title: "Virtual gallery", subtitle: "2025", link: "/myprojects/project1" },
+    { id: 2, img: "/static/trialmockup.png", title: "Belco Alliance website", subtitle: "2025", link: "/myprojects/project2" },
+    { id: 3, img: "/static/trialmockup.png", title: "SheLab", subtitle: "2024", link: "/myprojects/project3" }
 ];
 
 export default function ProjectsSection() {
@@ -49,7 +51,9 @@ export default function ProjectsSection() {
                             if (!state) return null;
                             return (
                                 <div key={slide.id} className="card" data-state={state}>
+                                    <Link href={slide.link} >
                                     <img src={slide.img} alt={slide.title} />
+                                    </Link>
                                 </div>
                             );
                         })}

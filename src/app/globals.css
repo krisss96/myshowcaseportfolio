@@ -23,9 +23,11 @@ html, body {
     min-height: 100vh;
     overscroll-behavior-y: none;
     overscroll-behavior-x: none;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS devices */
     margin: 0;
     padding: 0;
+    scroll-snap-type: y mandatory; /* Enables scroll snapping; prevent the scrollimg from stopping halfway */
+    scroll-behavior: smooth; /* Makes scrolling smooth */
 }
 
 /* Scrolling effect */
@@ -33,10 +35,20 @@ html, body {
 .sticky-section {
     position: sticky;
     top: 0;
-    min-height: 100vh;
-    height: auto;
+    height: 100vh;
     width: 100%;
-    overflow: visible;
+    overflow-y: auto; /* Enables vertical scrolling within each section; allow scrolling down the content fully before the main page scrolls to the next section. */
+    scroll-snap-align: start; /* Each section will snap to the start of the viewport when scrolling */
+
+}
+
+/* Hide the internal scrollbar, while still allowing the scroll functionality */
+.sticky-section::-webkit-scrollbar {
+    display: none;
+}
+.sticky-section {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 /* Background for each section */
@@ -219,6 +231,11 @@ html, body {
     object-fit: cover; /* crop to fill without distortion */
 }
 
+.card Link { /* make the link fill the entire card */
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
 .info {
     z-index: 10;
@@ -250,10 +267,22 @@ html, body {
 
 /* States */
 /* show + enable interactions + stacking for center item  */
-.card[data-state="center"], .info[data-state="center"] {
+.card[data-state="center"] {
     opacity: 1;
     z-index: 5;
     pointer-events: auto;
+}
+
+.info[data-state="center"] {
+    opacity: 1;
+    z-index: 5; /* ensure info is above next/prev cards */
+    pointer-events: none; /* makes it invisible for clicking */
+}
+
+.info[data-state="center"] > * {
+    transform: translateY(0) ;
+    opacity: 1;
+    transform-delay: 0.1s;
 }
 
 .card[data-state="center"] {
@@ -262,12 +291,13 @@ html, body {
 }
 
 .info[data-state="center"] > * { /* reveal .info children by sliding/fading them in */
-    transform: translateY(0);
+    transform: translateY(0); /* move to original position */
     opacity: 1;
     transition-delay: 0.1s;
 }
 
 /* Next */
+
 /*  minimal: visibility + stacking for next/prev */
 .card[data-state="next"], .info[data-state="next"] {
     opacity: 1;

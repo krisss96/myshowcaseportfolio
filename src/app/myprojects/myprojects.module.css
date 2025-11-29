@@ -1,0 +1,11 @@
+.projectTitle {
+    font-family: 'Fasdeco', serif;
+    letter-spacing: 0.02em;
+    color: black;
+    font-size: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 4rem;
+}
