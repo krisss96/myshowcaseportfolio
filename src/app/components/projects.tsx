@@ -35,7 +35,7 @@ export default function ProjectsSection() {
     const handlePrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <div className="section-background">
+        <section id="projects" className="section-background flex flex-col">
             <h2 className=" projects-header font-[Fasdeco]">My Projects</h2>
             <div className="sliderContainer">
                 <div className="slider">
@@ -77,6 +77,6 @@ export default function ProjectsSection() {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

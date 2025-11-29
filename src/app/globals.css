@@ -146,22 +146,23 @@ html, body {
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    margin-top: 6.5rem;
 }
 
 /* Carousel animation boxes */
 
 .sliderContainer {
     width: 100%;
-    min-height: 100vh;
-    height: auto;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: flex-start; /* allow taller cards to expand naturally */
     overflow: visible;
-    --w: min(25vw, 18rem);
+    --w: min(30vw, 23rem);
     --ratio: 1 / 1;
     --dur: 0.6s; /*  transition duration */
     --ease: cubic-bezier(0.2, 0.6, 0.35, 1); /* easing function */
+    padding-bottom: 3.5rem;
 }
 
 .slider {
