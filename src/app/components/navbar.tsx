@@ -17,8 +17,8 @@ export default function Navbar() {
             <Image
               src="/static/logo.svg"
               alt="Logo"
-              width={150}
-              height={150}
+              width={130}
+              height={130}
               className="w-16 h-16"
               priority
             />

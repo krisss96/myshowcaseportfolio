@@ -111,21 +111,22 @@ html, body {
     -webkit-backdrop-filter: blur(10px) saturate(140%);
     backdrop-filter: blur(10px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0;
 }
 
 #navbar-bg .navbar-links a {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 
 /* Main Page Styling */
 #header-main {
-    font-size: 12.4rem;
+    font-size: 10rem;
     margin-left: 5rem;
 }
 
 #main-text {
-    font-size: 2.7rem;
+    font-size: 2.2rem;
     position: relative;
     transform: translateX(-100%);
     opacity: 0;
@@ -141,12 +142,12 @@ html, body {
 /* Projects Page Styling */
 
 .projects-header {
-    font-size: 9.6rem;
+    font-size: 7rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
-    margin-top: 6.5rem;
+    margin-top: 6rem;
 }
 
 /* Carousel animation boxes */
@@ -158,11 +159,11 @@ html, body {
     justify-content: center;
     align-items: flex-start; /* allow taller cards to expand naturally */
     overflow: visible;
-    --w: min(30vw, 23rem);
+    --w: min(23vw, 18rem);
     --ratio: 1 / 1;
     --dur: 0.6s; /*  transition duration */
     --ease: cubic-bezier(0.2, 0.6, 0.35, 1); /* easing function */
-    padding-bottom: 3.5rem;
+    padding-bottom: 4.7rem;
 }
 
 .slider {
@@ -230,6 +231,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* crop to fill without distortion */
+    position: absolute;
 }
 
 .card Link { /* make the link fill the entire card */
@@ -243,12 +245,12 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-bottom: 3rem;
+    padding-bottom: 0.2rem;
     transform: translateZ(2rem);
 }
 
 .info h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     line-height: 1;
     color: #fff;
 }

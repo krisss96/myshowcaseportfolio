@@ -32,7 +32,7 @@ export default function HomeSection() {
             </div>
 
             <div className="flex-1 md:flex-[2.2] flex items-center justify-center md:justify-end">
-                <div className="w-full max-w-none md:w-[96%] lg:w-[99%] overflow-hidden shadow-2xl h-[78Svh] md:h-[90vh] lg:h-[99vh]">
+                <div className="w-full max-w-none md:w-[96%] lg:w-[99%] overflow-hidden shadow-2xl h-[78Svh] md:h-[95vh] lg:h-[104vh]">
                     <video
                         className="w-full h-full object-center object-cover"
                         autoPlay

@@ -10,10 +10,11 @@ interface Slide {
     title: string;
     subtitle: string;
     link: string;
+    video?: string;
 }
 
 const slides: Slide[] = [
-    { id: 1, img: "/static/trialmockup.png", title: "Virtual gallery", subtitle: "2025", link: "/myprojects/project1" },
+    { id: 1, img: "/static/mockup1.png", title: "Virtual gallery", subtitle: "2025", link: "/myprojects/project1", video: "/static/hover1.mp4" },
     { id: 2, img: "/static/trialmockup.png", title: "Belco Alliance website", subtitle: "2025", link: "/myprojects/project2" },
     { id: 3, img: "/static/trialmockup.png", title: "SheLab", subtitle: "2024", link: "/myprojects/project3" }
 ];
@@ -34,6 +35,23 @@ export default function ProjectsSection() {
     const handleNext = () => setCurrent((prev) => (prev + 1) % slides.length);
     const handlePrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
+    const mouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+         const video = e.currentTarget.querySelector('video');
+            if (video) {
+                 video.play();
+            }
+    };
+
+    const mouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+        const video = e.currentTarget.querySelector('video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+            video.load();
+        }
+
+    };
+
     return (
         <section id="projects" className="section-background flex flex-col">
             <h2 className=" projects-header font-[Fasdeco]">My Projects</h2>
@@ -48,11 +66,23 @@ export default function ProjectsSection() {
                     <div className="stack">
                         {slides.map((slide, index) => {
                             const state = getSlideState(index);
-                            if (!state) return null;
+                             if (!state) return null;
                             return (
-                                <div key={slide.id} className="card" data-state={state}>
-                                    <Link href={slide.link} >
-                                    <img src={slide.img} alt={slide.title} />
+                                <div key={slide.id} className="card" data-state={state} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+                                    <Link href={slide.link}  >
+                                        {slide.video ? (
+                                            <video
+                                                muted
+                                                loop
+                                                preload="auto"
+                                                poster={slide.img}
+                                                className="absolute w-full h-full object-cover"
+                                                >
+                                                <source src={slide.video} type="video/mp4" />
+                                            </video>
+                                        ) : (
+                                            <img src={slide.img} alt={slide.title} />
+                                        )}
                                     </Link>
                                 </div>
                             );
