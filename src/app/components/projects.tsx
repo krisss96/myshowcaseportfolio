@@ -15,7 +15,7 @@ interface Slide {
 
 const slides: Slide[] = [
     { id: 1, img: "/static/mockup1.png", title: "Virtual gallery", subtitle: "2025", link: "/myprojects/project1", video: "/static/hover1.mp4" },
-    { id: 2, img: "/static/trialmockup.png", title: "Belco Alliance website", subtitle: "2025", link: "/myprojects/project2" },
+    { id: 2, img: "/static/mockup2.png", title: "Belco Alliance website", subtitle: "2025", link: "/myprojects/project2", video: "/static/hover2%20(2).mp4" },
     { id: 3, img: "/static/trialmockup.png", title: "SheLab", subtitle: "2024", link: "/myprojects/project3" }
 ];
 
@@ -38,16 +38,31 @@ export default function ProjectsSection() {
     const mouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
          const video = e.currentTarget.querySelector('video');
             if (video) {
-                 video.play();
+                 try {
+                     // Ensure muted so browsers allow autoplay
+                     (video as HTMLVideoElement).muted = true;
+                     const p = (video as HTMLVideoElement).play();
+                     if (p && typeof p.then === 'function') {
+                         p.catch(() => {
+                             // ignore play promise rejection (autoplay blocked etc.)
+                         });
+                     }
+                 } catch {
+                     // swallow errors
+                 }
             }
     };
 
     const mouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
         const video = e.currentTarget.querySelector('video');
         if (video) {
-            video.pause();
-            video.currentTime = 0;
-            video.load();
+            try {
+                (video as HTMLVideoElement).pause();
+                (video as HTMLVideoElement).currentTime = 0;
+                (video as HTMLVideoElement).load();
+            } catch {
+                // swallow
+            }
         }
 
     };
@@ -74,7 +89,8 @@ export default function ProjectsSection() {
                                             <video
                                                 muted
                                                 loop
-                                                preload="auto"
+                                                preload="metadata"
+                                                playsInline
                                                 poster={slide.img}
                                                 className="absolute w-full h-full object-cover"
                                                 >

@@ -17,6 +17,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'A';
+    src: url('../../public/fonts/Royalford.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'B';
+    src: url('../../public/fonts/Askilon.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 @tailwind utilities;
 
 html, body {
@@ -138,6 +154,68 @@ html, body {
     opacity: 1;
 }
 
+#badgesteing {
+    margin-bottom: -160px;
+    transform: translateX( -15px);
+    font-size: 1.3rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    width: min-content; /* Shrink width to fit text */
+    position: absolute;
+    z-index: 50;
+    left: 50%;
+    transform: translateX(calc(-50% - 15px));
+    top: -266px;
+    letter-spacing: 0.1em;
+    color: black;
+}
+
+.badge-anim {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%; /* hides the empty space at the top of the video file*/
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-120vh) rotate(0deg);
+        animation-timing-function: ease-in;
+    }
+    45% {
+        transform: translateY(9vh) rotate(-4deg);
+        animation-timing-function: ease-out;
+    }
+
+    70% {
+        transform: translateY(-12vh) rotate(3deg);
+        animation-timing-function: ease-in;
+    }
+
+    85% {
+        transform: translateY(9vh) rotate(-2deg);
+        animation-timing-function: ease-out;
+    }
+
+    95% {
+        transform: translateY(5vh)rotate(2deg);
+        animation-timing-function: ease-in;
+    }
+
+    98% {
+        transform: translateY(9vh) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateY(9vh) rotate(0deg);
+    }
+}
+
+.animation { /* Connects the class to the keyframes */
+    animation: fallDown 1.7s ease-out forwards;
+    transform-origin: top center; /* makes it swing from the top of the string instead of not the center of the card */
+}
+
 
 /* Projects Page Styling */
 
@@ -174,7 +252,6 @@ html, body {
     justify-content: center;
     align-items: center;
 }
-
 
 .btn {
     position: absolute;
@@ -253,12 +330,14 @@ html, body {
     font-size: 2.3rem;
     line-height: 1;
     color: #fff;
+    font-family: 'B', sans-serif;
 }
 
 .info h2 {
     font-size: 1.2rem;
     margin-top: 0.5rem;
     color: #eee;
+    font-family: 'Fasdeco', sans-serif;
 }
 
 

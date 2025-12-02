@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 
 export default function HomeSection() {
     const textRef = useRef<HTMLDivElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
 
@@ -31,12 +32,18 @@ export default function HomeSection() {
                 </div>
             </div>
 
-            <div className="flex-1 md:flex-[2.2] flex items-center justify-center md:justify-end">
-                <div className="w-full max-w-none md:w-[96%] lg:w-[99%] overflow-hidden shadow-2xl h-[78Svh] md:h-[95vh] lg:h-[104vh]">
+            <div className=" animation flex-1 md:flex-[2.2] flex flex-col items-center justify-center md:justify-end mt-20"
+                 onAnimationEnd={() => {
+                     videoRef.current?.play();
+                 }}
+            >
+                <div id="badgesteing" className="font-[Fasdeco]">KristiyanaPetrova</div>
+                <div className="w-full max-w-none md:w-[96%] lg:w-[99%] overflow-hidden shadow-2xl h-[78vh] md:h-[95vh] lg:h-[104vh] ">
                     <video
-                        className="w-full h-full object-center object-cover"
+                        className="badge-anim"
+                        loop={false}
                         autoPlay
-                        loop
+                        muted
                         playsInline // for mobile devices
                         preload="auto"  // preload the video for better performance
                     >

@@ -17,8 +17,8 @@ export default function Navbar() {
             <Image
               src="/static/logo.svg"
               alt="Logo"
-              width={130}
-              height={130}
+              width={100}
+              height={100}
               className="w-16 h-16"
               priority
             />
@@ -30,13 +30,13 @@ export default function Navbar() {
               {/* ml-auto - pushes the links to the right */}
               {/* navbar-links - custom class for additional styling if needed */}
             <li className="inline-block">
-              <a href="#projects" className="px-3 py-1  text-black font-[Afante]">PROJECTS</a>
+              <a href="#projects" className="px-3 py-1  text-black font-[A]">PROJECTS</a>
             </li>
             <li className="inline-block">
-              <a href="#about" className="px-3 py-1 text-black font-[Afante]">ABOUT</a>
+              <a href="#about" className="px-3 py-1 text-black font-[A]">ABOUT</a>
             </li>
             <li className="inline-block">
-              <a href="#contacts" className="px-3 py-1 text-black font-[Afante]">CONTACTS</a>
+              <a href="#contacts" className="px-3 py-1 text-black font-bold font-[B]">CONTACTS</a>
             </li>
           </ul>
         </div>
