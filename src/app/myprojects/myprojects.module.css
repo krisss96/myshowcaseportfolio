@@ -2,10 +2,118 @@
     font-family: 'Fasdeco', serif;
     letter-spacing: 0.02em;
     color: black;
-    font-size: 10rem;
+    font-size: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-top: 4rem;
 }
+
+body{
+    --spot-x: 10%;
+    --spot-y: 20%;
+    background: radial-gradient(circle 70rem at var(--spot-x) var(--spot-y), rgb(220, 200, 200), rgba(37,4,4,1)), rgba(37,4,4,1);
+}
+
+.projectinfo {
+    display: flex;
+    flex-direction: row; /* Side-by-side */
+    justify-content: center; /* Center them */
+    align-items: stretch;    /* Make them same height */
+    gap: 2rem;               /* Space between the two boxes */
+
+    width: 90%;
+    max-width: 1400px;
+    margin-bottom: 3rem;
+}
+
+.overvbox,
+.tehninfobox {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.overvbox {
+    flex: 2; /* Wider box (66%) */
+}
+
+/* Right Box: Technology */
+.tehninfobox {
+    flex: 1; /* Narrower box (33%) */
+}
+
+/* Headers */
+.overv,
+.tehntitle {
+    font-family: 'Fasdeco', serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid black; /* Brutalist line */
+    padding-bottom: 5px;
+    color: black;
+}
+
+/* Text Body */
+.infotxt,
+.tehntxt {
+    font-family: 'Afante', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: black;
+    text-align: justify;
+}
+
+.tehntxt {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tehnIcon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Live Project Button */
+.liveProjectContainer {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.liveProjectButton {
+    display: inline-block;
+    background: black;
+    color: white;
+    font-family: 'Fasdeco', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 5rem;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.liveProjectButton:hover {
+    background: transparent;
+    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
