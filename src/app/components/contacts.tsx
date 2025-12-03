@@ -5,7 +5,7 @@
 export default function ContactsSection() {
 
     return (
-        <section id="contacts" className=" section-background min-h-screen px-16 py-32 flex flex-col">
+        <section id="contacts" className=" section-background min-h-screen px-16 py-32 flex flex-col mt-9">
             <h2 id="contacts-header" className="font-[Fasdeco]">Contact me</h2>
             <div className="contacts-info flex flex-row">
 

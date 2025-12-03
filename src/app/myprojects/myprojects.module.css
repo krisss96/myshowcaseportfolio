@@ -13,7 +13,7 @@
 body{
     --spot-x: 10%;
     --spot-y: 20%;
-    background: radial-gradient(circle 70rem at var(--spot-x) var(--spot-y), rgb(220, 200, 200), rgba(37,4,4,1)), rgba(37,4,4,1);
+    background: radial-gradient(circle 90rem at var(--spot-x) var(--spot-y), rgb(220, 200, 200), rgba(37,4,4,1)), rgba(37,4,4,1);
 }
 
 .projectinfo {
@@ -22,7 +22,7 @@ body{
     justify-content: center; /* Center them */
     align-items: stretch;    /* Make them same height */
     gap: 2rem;               /* Space between the two boxes */
-
+    margin-top: -16.1rem;
     width: 90%;
     max-width: 1400px;
     margin-bottom: 3rem;
@@ -116,4 +116,70 @@ body{
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
+
+.overvstrings, .tehnstrings {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    align-items: flex-end;
+}
+
+.prstring1, .prstring2,
+.prstring3, .prstring4 {
+    font-size: 1.2rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: right;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: Fasdeco;
+}
+/* 1st String (Long) */
+.prstring1 {
+    height: 400px; /* Reaches Top */
+}
+
+/* 2nd String (Short - Keeps touching header area) */
+.prstring2 {
+    height: 200px;
+}
+
+/* 3rd String (Long) */
+.prstring3 {
+    height: 400px; /* Reaches Top */
+}
+
+/* 4th String (Long) */
+.prstring4 {
+    height: 400px; /* Reaches Top */
+}
+@keyframes hangingShake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.overvbox:hover,
+.tehninfobox:hover {
+    animation: hangingShake 0.6s ease-in-out infinite;
+    transform-origin: top center;
+    cursor: pointer;
+}
+
+.projectcardboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: -4rem;
+
+}
+
 
