@@ -3,54 +3,92 @@ import Image from 'next/image';
 
 export default function Page1() {
     return (
-        <div className="flex flex-col items-center justify-center">
-            <h1 className={styles.projectTitle}>Virtual gallery</h1>
-            <div className={styles.projectcardboxes}>
+        <div className="flex flex-col items-center justify-center w-full">
 
-                <div className={styles.projectinfo}>
-
-                    <div className={styles.overvcard}>
-                        <div className={styles.overvstrings}>
-                            <div className={styles.prstring1}> projectsprojects</div>
-                            <div className={styles.prstring2}> projects</div>
-                        </div>
-                        <div className={styles.overvbox}>
-                            <h2 className={styles.overv}> Project Overview</h2>
-                             <div className={styles.infotxt}>The Virtual Renaissance Gallery is an immersive 3D experience built with Three.js.  The goal of this project was to recreate the elegant and timeless atmosphere of the Renaissance era, transforming classical paintings into an interactive digital exhibition.
-                            The gallery allows users to explore a curated collection of Renaissance artworks, presented to scale and illuminated in a way that reflects the aesthetics of real museum spaces.  Each painting includes descriptive details, offering both a visual and educational journey through art history.
-                            </div>
-                        </div>
-                    </div>
+            <div className={styles.herocontainer}>
+                <Image
+                    src="/static/hero1.png"
+                    alt="gallery-hero"
+                    fill
+                    className={styles.heroimg}
+                    priority
+                />
 
 
-                        <div className={styles.tehnvcard}>
-                            <div className={styles.tehnstrings}>
-                                <div className={styles.prstring3}>projectsprojectsprojectsprojects</div>
-                                <div className={styles.prstring4}>projectsprojects</div>
-                            </div>
-                            <div className={styles.tehninfobox}>
-                                <h3 className={styles.tehntitle}>Technology used:</h3>
-                                <div className={styles.tehntxt}>
-                                    <Image className={styles.tehnIcon} src="/static/three-js.png" alt="Threejs" width={50} height={50} />
-                                    <Image className={styles.tehnIcon} src="/static/js.png" alt="js" width={50} height={50} />
-                                    <Image className={styles.tehnIcon} src="/static/html.png" alt="html" width={50} height={50} />
-                                    <Image className={styles.tehnIcon} src="/static/css.png" alt="css" width={50} height={50} />
-                                </div>
-                            </div>
-                        </div>
+                <div className={styles.headercontainer}>
+                    <h1 className={styles.projectheader}>Virtual Gallery</h1>
+                    <h2 className={styles.projectsub}>
+                        An immersive virtual gallery with a curated collection of Renaissance paintings
+                    </h2>
                 </div>
+            </div>
 
-                <div className={styles.liveProjectContainer}>
+            <div className={styles.layoutcontainer}>
+                <div className={styles.stickyinfo}>
+                    <video className={styles.videopr}
+                           loop
+                           autoPlay
+                           playsInline
+                           muted
+                           preload="auto"
+                    >
+                        <source src="/static/galvideo.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+
                     <a
                         href="#"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={styles.liveProjectButton}
+                        className={styles.prbtn}
                     >
                         EXPLORE THE GALLERY LIVE
                     </a>
                 </div>
+
+                <div className={styles.scrollinginfo}>
+
+                    <div className={styles.infocontainer}>
+                        <h3 className={styles.txtheader}>Role:</h3>
+                        <div className={styles.infotxt}>
+                            Creative Developer & UI Designer
+                        </div>
+                    </div>
+                    <div className={styles.infocontainer}>
+                        <h3 className={styles.txtheader}>Development period:</h3>
+                        <div className={styles.infotxt}>
+                            June 2025
+                        </div>
+                    </div>
+
+                    <div className={styles.infocontainer}>
+                        <h3 className={styles.txtheader}>Technology used:</h3>
+                        <div className={styles.tehntxt}>
+                            <Image className={styles.tehnicon} src="/static/three-js.png" alt="Threejs" width={50} height={50} />
+                            <Image className={styles.tehnicon} src="/static/js.png" alt="js" width={50} height={50} />
+                            <Image className={styles.tehnicon} src="/static/html.png" alt="html" width={50} height={50} />
+                            <Image className={styles.tehnicon} src="/static/css.png" alt="css" width={50} height={50} />
+                        </div>
+                    </div>
+
+                    <div className={styles.infocontainer}>
+                        <h3 className={styles.txtheader}>Project Overview:</h3>
+                        <div className={styles.infotxt}>
+                           The Virtual Gallery is a web-based 3D environment that allows users to explore a curated collection of Renaissance paintings in an immersive setting. Built using Three.js, the gallery features realistic lighting and textures to enhance the viewing experience.
+
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
+            <div className={styles.detailinfo}>
+                <h3 className={styles.txtheader}>Concept & Development</h3>
+                <div className={styles.infotxt}>
+                 detailed info detailed info detailed info detailed infodetailed infodetailed infodetailed info detailed info detailed info detailed infodetailed infodetailed infodetailed info
+                </div>
+            </div>
         </div>
-    );}
+    );
+}
