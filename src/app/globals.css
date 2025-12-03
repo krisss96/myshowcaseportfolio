@@ -154,9 +154,8 @@ html, body {
     opacity: 1;
 }
 
-#badgesteing {
+#badgestring {
     margin-bottom: -160px;
-    transform: translateX( -15px);
     font-size: 1.3rem;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -311,7 +310,7 @@ html, body {
     position: absolute;
 }
 
-.card Link { /* make the link fill the entire card */
+.card a {
     display: block;
     width: 100%;
     height: 100%;
@@ -364,7 +363,7 @@ html, body {
 .info[data-state="center"] > * {
     transform: translateY(0) ;
     opacity: 1;
-    transform-delay: 0.1s;
+    transition-delay: 0.1s;
 }
 
 .card[data-state="center"] {
@@ -409,4 +408,150 @@ html, body {
 
 .info[data-state="prev"] {
     transform: translateX(-110%) rotateY(45deg) translateZ(2rem);
+}
+
+
+
+/* Contacts Page Styling */
+#contacts-header {
+    font-size: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.5rem;
+
+}
+
+.contacts-info {
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10rem;
+    margin-top: -9rem;
+}
+
+
+.mycont-container,
+.contme-form {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mycont-strings, .contme-strings {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    align-items: flex-end;
+}
+
+.mycont-string1, .mycont-string2,
+.contme-string1, .contme-string2 {
+    font-size: 1.2rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: right;
+    font-weight: bold;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.card-content-box {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: -15px;
+    position: relative;
+    z-index: 5;
+}
+
+
+.contme-form label {
+    display: block;
+    font-family: 'Fasdeco', serif;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: black;
+}
+
+.contme-form input,
+.contme-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 10px 0;
+    font-family: 'Afante', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    outline: none;
+}
+
+.contme-form input:focus,
+.contme-form textarea:focus {
+    border-bottom: 2px solid white;
+}
+
+.contme-form button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.5rem;
+    background: black;
+    color: white;
+    font-family: 'Fasdeco', serif;
+    font-size: 1.5rem;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.contme-form button:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
+.mycont-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.mycont-text {
+    font-family: 'Afante', sans-serif;
+    font-size: 1.4rem;
+}
+
+.mycont-string1,
+.contme-string2 {
+    height: 300px;
+    padding-bottom: 22px;
+}
+
+
+.mycont-string2,
+.contme-string1 {
+    height: 200px;
+    padding-bottom: 13px;
+}
+
+@keyframes hangingShake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.mycont-container:hover,
+.contme-form:hover {
+    animation: hangingShake 0.6s ease-in-out infinite;
+    transform-origin: top center;
+    cursor: pointer;
 }

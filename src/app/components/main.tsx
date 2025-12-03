@@ -37,7 +37,7 @@ export default function HomeSection() {
                      videoRef.current?.play();
                  }}
             >
-                <div id="badgesteing" className="font-[Fasdeco]">KristiyanaPetrova</div>
+                <div id="badgestring" className="font-[Fasdeco]">KristiyanaPetrova</div>
                 <div className="w-full max-w-none md:w-[96%] lg:w-[99%] overflow-hidden shadow-2xl h-[78vh] md:h-[95vh] lg:h-[104vh] ">
                     <video
                         className="badge-anim"
