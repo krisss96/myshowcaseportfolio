@@ -17,28 +17,26 @@ export default function HomeSection() {
     return (
         <section
             id="home"
-            className=" section-background flex flex-row md:flex-row items-center justify-center md:justify-between min-h-screen w-full mx-auto px-8 md:px-16 max-w-none pt-32 pb-20">
+            className="relative flex justify-center items-center min-h-screen w-full mx-auto max-w-none pt-32 pb-20">
             {/* max-w-none - allows the section to span the full width of the viewport */}
             {/* pt - padding-top */}
             {/* pb - padding-bottom */}
-            <div className="flex-1 md:flex-[0.35] text-center md:text-left mb-10 md:mb-0">
-                {/* md:flex-[0.35] - on medium screens and up, this div takes up 35% of the width */}
-                {/*md - min-width*/}
-                <h1 id="header-main" className="leading-tight font-[Fasdeco] ">Portfolio</h1>
-                {/* lg - large screens */}
-                <div id="main-text"  ref={textRef}  className="font-[Afante]">
-                    <div>UX Designer</div>
-                    <div>Frontend Developer</div>
+            <div id="main-text">
+                <div id="sub-main">
+                    <h1 id="header-main" className="leading-tight font-[Fasdeco] ">HELLO</h1>
+                    <h1 id="kristiyana-line" className="leading-tight font-[Fasdeco]">KRISTIYANA</h1>
                 </div>
+
+                <h1 id="im-line" className="leading-tight font-[Fasdeco]">I'M</h1>
             </div>
 
-            <div className=" animation flex-1 md:flex-[2.2] flex flex-col items-center justify-center md:justify-end mt-20"
+            <div id="badge-unit" className="animation"
                  onAnimationEnd={() => {
                      videoRef.current?.play();
                  }}
             >
-                <div id="badgestring" className="font-[Fasdeco]">KristiyanaPetrova</div>
-                <div className="w-full max-w-none md:w-[96%] lg:w-[99%] overflow-hidden shadow-2xl h-[78vh] md:h-[95vh] lg:h-[104vh] ">
+                <div id="badgestring" className="font-[Fasdeco]">PORTFOLIO</div>
+                <div className="w-full max-w-none md:w-[96%] lg:w-[99%] overflow-hidden shadow-2xl h-[68vh] md:h-[85vh] lg:h-[94vh] ">
                     <video
                         className="badge-anim"
                         loop={false}

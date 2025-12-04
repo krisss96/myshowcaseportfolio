@@ -30,13 +30,13 @@ export default function Navbar() {
               {/* ml-auto - pushes the links to the right */}
               {/* navbar-links - custom class for additional styling if needed */}
             <li className="inline-block">
-              <a href="#projects" className="px-3 py-1  text-black font-[A]">PROJECTS</a>
+              <a href="#projects" className="px-3 py-1  text-black font-[Afante]">PROJECTS</a>
             </li>
             <li className="inline-block">
-              <a href="#about" className="px-3 py-1 text-black font-[A]">ABOUT</a>
+              <a href="#about" className="px-3 py-1 text-black font-[Afante]">ABOUT</a>
             </li>
             <li className="inline-block">
-              <a href="#contacts" className="px-3 py-1 text-black font-bold font-[B]">CONTACTS</a>
+              <a href="#contacts" className="px-3 py-1 text-black font-bold font-[Afante]">CONTACTS</a>
             </li>
           </ul>
         </div>

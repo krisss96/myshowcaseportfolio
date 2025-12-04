@@ -11,23 +11,7 @@
 
 @font-face {
     font-family: 'Afante';
-    src: url('../../public/fonts/Afante.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'A';
-    src: url('../../public/fonts/Royalford.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'B';
-    src: url('../../public/fonts/Askilon.otf') format('opentype');
+    src: url('../../public/fonts/NimbusRomNo9L-Reg.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -74,10 +58,12 @@ html, body {
     background: radial-gradient(circle 70rem at var(--spot-x) var(--spot-y), rgb(220, 200, 200), rgba(37,4,4,1)), rgba(37,4,4,1);
 }
 
-
-#home.section-background {
-    --spot-x: 20%;
-    --spot-y: 10%;
+#home {
+    --spot-x: 95%;
+    --spot-y: 25%;
+    background: radial-gradient(
+            circle 190rem at var(--spot-x) var(--spot-y), rgb(32, 5, 5) 0%, rgb(150, 120, 120) 25%, rgb(220, 200, 200) 80%);
+    color: #333333;
 }
 
 #projects.section-background {
@@ -136,36 +122,64 @@ html, body {
 
 
 /* Main Page Styling */
-#header-main {
-    font-size: 10rem;
-    margin-left: 5rem;
+#home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #main-text {
-    font-size: 2.2rem;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    line-height: 0.9;
+    font-size: 10rem;
     position: relative;
-    transform: translateX(-100%);
+   /* transform: translateX(-100%);
     opacity: 0;
-    transition: transform 2s ease, opacity 2s ease;
+    transition: transform 2s ease, opacity 2s ease; - not used for now*/
+    font-family: 'Fasdeco', sans-serif;
 }
 
-#main-text.active {
-    transform: translateX(0);
-    opacity: 1;
+#sub-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:2rem;
+    margin-top: 1rem;
+}
+#im-line {
+
+    margin-left: -61vw;
+    line-height: 0.9;
+    margin-top: 15vw;
+    margin-bottom: 0;
+    padding: 0;
+
+}
+
+#badge-unit {
+    margin-left: -25vw;
+    z-index: 20;
+    margin-top: -6rem;
+    width: 35vw;
+    height: 45vh;
 }
 
 #badgestring {
     margin-bottom: -160px;
-    font-size: 1.3rem;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    width: min-content; /* Shrink width to fit text */
+    font-size: 2.6rem;
+    width: min-content;
     position: absolute;
     z-index: 50;
+    transform: translateX(calc(-50% - 15px)) rotate(90deg);
     left: 50%;
-    transform: translateX(calc(-50% - 15px));
-    top: -266px;
-    letter-spacing: 0.1em;
+    top: -63px;
+    letter-spacing: 0.01em;
+    font-family: 'Fasdeco', serif;
+    transform-origin: center;
     color: black;
 }
 
