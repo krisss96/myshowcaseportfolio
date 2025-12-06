@@ -58,6 +58,7 @@ Open http://localhost:3000 with your browser to see the result.
 
 ## Project Structure
 
+```
 .
 ├── public/
 │   ├── fonts/                  # Custom font files 
@@ -78,3 +79,4 @@ Open http://localhost:3000 with your browser to see the result.
             ├── project1/page.tsx   # Project details page 
             ├── project2/page.tsx   # Project details page 
             └── project3/page.tsx   # Project details page 
+```
