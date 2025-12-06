@@ -44,7 +44,7 @@ body {
     letter-spacing: 0.02em;
     color: black;
     align-content: flex-start;
-    margin-top: 5rem;
+    margin-top: 6rem;
     line-height: 1;
     margin-bottom: 1rem;
 }
@@ -62,7 +62,20 @@ body {
     border-radius: 4px;
 
 }
+.belcosub {
+    font-weight: bold;
+    font-family: 'Afante', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    align-content: flex-end;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 0;
 
+}
 .layoutcontainer {
     display: flex;
     flex-direction: row;
@@ -189,6 +202,4 @@ body {
     padding: 1.6rem;
 }
 
-#belcoheader {
-    margin-top: 12rem;
-}
+

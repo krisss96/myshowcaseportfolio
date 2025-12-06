@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -29,13 +30,13 @@ export default function Navbar() {
           <ul className="flex items-center ml-auto navbar-links" style={{ gap: '0rem', columnGap: '0rem' }}>
               {/* ml-auto - pushes the links to the right */}
             <li className="inline-block">
-              <a href="#projects" className="px-3 py-1  text-black font-[Afante]">PROJECTS</a>
+              <Link href="/#projects" className="px-3 py-1  text-black font-[Afante]">PROJECTS</Link>
             </li>
             <li className="inline-block">
-              <a href="#about" className="px-3 py-1 text-black font-[Afante]">ABOUT</a>
+              <Link href="/#about" className="px-3 py-1 text-black font-[Afante]">ABOUT</Link>
             </li>
             <li className="inline-block">
-              <a href="#contacts" className="px-3 py-1 text-black font-bold font-[Afante]">CONTACTS</a>
+              <Link href="/#contacts" className="px-3 py-1 text-black font-bold font-[Afante]">CONTACTS</Link>
             </li>
           </ul>
         </div>

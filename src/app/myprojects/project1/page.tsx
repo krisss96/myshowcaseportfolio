@@ -1,8 +1,11 @@
 import styles from  '../myprojects.module.css';
+import Navbar from '../../components/navbar';
 import Image from 'next/image';
 
 export default function Page1() {
     return (
+        <>
+            <Navbar />
         <div className="flex flex-col items-center justify-center w-full">
 
             <div className={styles.herocontainer}>
@@ -37,7 +40,7 @@ export default function Page1() {
                     </video>
 
                     <a
-                        href="#"
+                        href="https://project-x-phi-five.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.prbtn}
@@ -90,5 +93,6 @@ export default function Page1() {
                 </div>
             </div>
         </div>
+            </>
     );
 }

@@ -18,13 +18,18 @@ export default function HomeSection() {
         <section
             id="home"
             className="relative flex justify-center items-center min-h-screen w-full mx-auto max-w-none pt-32 pb-20">
-            {/* decorative background spot - non-interactive and behind content */}
-            <div className="bg-spot" aria-hidden="true" />
             {/* max-w-none - allows the section to span the full width of the viewport */}
             {/* pt - padding-top */}
             {/* pb - padding-bottom */}
+            <div className="background-container">
+                <div className="circle circle-1"></div>
+                <div className="circle circle-2"></div>
+                <div className="circle circle-3"></div>
+                <div className="circle circle-4"></div>
+                <div className="noise-overlay"></div>
+            </div>
 
-            <div id="main-text">
+            <div id="main-text" className="z-10 relative">
                 <div id="sub-main">
                     <h1 id="header-main" className="leading-tight font-[Fasdeco] ">hello</h1>
                     <h1 id="kristiyana-line" className="leading-tight font-[Fasdeco]">KrIstIyNA</h1>

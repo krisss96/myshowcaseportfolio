@@ -1,8 +1,11 @@
 import styles from  '../myprojects.module.css';
+import Navbar from '../../components/navbar';
 import Image from 'next/image';
 
 export default function Page1() {
     return (
+        <>
+            <Navbar />
         <div className="flex flex-col items-center justify-center w-full">
 
             <div className={styles.herocontainer}>
@@ -16,8 +19,8 @@ export default function Page1() {
 
 
                 <div className={styles.headercontainer}>
-                    <h1 id="belcoheader" className={styles.projectheader}>Belco Alliance website</h1>
-                    <h2 className={styles.projectsub}>
+                    <h1  className={styles.projectheader}>Belco Alliance website</h1>
+                    <h2 className={styles.belcosub}>
                         A corporate website for Belco Alliance, showcasing their services and expertise.
                     </h2>
                 </div>
@@ -37,7 +40,7 @@ export default function Page1() {
                     </video>
 
                     <a
-                        href="#"
+                        href="https://belco-alliance-ashy.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.prbtn}
@@ -72,7 +75,7 @@ export default function Page1() {
 
                     <div className={styles.infocontainer}>
                         <h3 className={styles.txtheader}>Project Overview:</h3>
-                        <div className={styles.infotxt}>
+                        <div className={styles.infotxt}> Under development
 
                         </div>
                     </div>
@@ -88,5 +91,6 @@ export default function Page1() {
                 </div>
             </div>
         </div>
+        </>
     );
 }

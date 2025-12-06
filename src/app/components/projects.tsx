@@ -16,7 +16,7 @@ interface Slide {
 const slides: Slide[] = [
     { id: 1, img: "/static/mockup1.png", title: "Virtual gallery", subtitle: "2025", link: "/myprojects/project1", video: "/static/hover1.mp4" },
     { id: 2, img: "/static/mockup2.png", title: "Belco Alliance website", subtitle: "2025", link: "/myprojects/project2", video: "/static/hover2%20(2).mp4" },
-    { id: 3, img: "/static/trialmockup.png", title: "SheLab", subtitle: "2024", link: "/myprojects/project3" }
+    { id: 3, img: "/static/trialmockup.png", title: "SheLab- Under development", subtitle: "2024", link: "/myprojects/project3" }
 ];
 
 export default function ProjectsSection() {

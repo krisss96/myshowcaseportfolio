@@ -1,8 +1,11 @@
 import styles from  '../myprojects.module.css';
+import Navbar from '../../components/navbar';
 import Image from 'next/image';
 
 export default function Page1() {
     return (
+        <>
+            <Navbar />
         <div className="flex flex-col items-center justify-center w-full">
 
             <div className={styles.herocontainer}>
@@ -16,7 +19,7 @@ export default function Page1() {
 
 
                 <div className={styles.headercontainer}>
-                    <h1 className={styles.projectheader}>Virtual Gallery</h1>
+                    <h1 className={styles.projectheader}>Under development</h1>
                     <h2 className={styles.projectsub}>
                         An immersive virtual gallery with a curated collection of Renaissance paintings
                     </h2>
@@ -90,5 +93,6 @@ export default function Page1() {
                 </div>
             </div>
         </div>
+            </>
     );
 }
