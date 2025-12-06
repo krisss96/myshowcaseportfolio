@@ -1,30 +1,20 @@
 # Showcase Portfolio
 
-A personal portfolio website built with Next.js, designed to showcase my skills as a Creative Web Developer and UI Designer through through my projects.
-
-
-## Features
-
-* **Modern Next.js :** Built with App Router and server components for optimal performance and SEO.
-*  **Animated Home Section:** Features an initial animation.
-* **Interactive Projects Carousel:** A custom-built, responsive 3D-effect carousel for navigating projects, featuring an animated video preview on hover for each project.
-* **Project Detail Pages:** Dedicated sub-pages for each project (`/myprojects/project1`, `/myprojects/project2`, etc.) showcasing project role, technology, and a detailed overview with a video presentation.
-
+A personal portfolio website built with Next.js, designed to showcase my skills as a Creative Web Developer and UI Designer through my projects - both indidual and group ones.
 
 
 ## Technology Used
 
 The project is developed using the following technologies:
-   **Framework** | [Next.js]
-   **Language** | [TypeScript]
-   **Styling** | [Tailwind CSS]
-   **Styling** | CSS Modules 
+
+   **Framework** | Next.js \
+   **Language** | TypeScript \
+   **Styling** | Tailwind CSS, CSS Modules 
 
 
 ## Installation & Setup
 
-Follow these steps to get a local copy of the project up and running.
-
+Follow the steps below to set up and run the project locally.
 ### Prerequisites
 
 You must have [Node.js](https://nodejs.org/en/) and npm (or yarn/pnpm) installed.
@@ -32,7 +22,7 @@ You must have [Node.js](https://nodejs.org/en/) and npm (or yarn/pnpm) installed
 ### 1. Clone the repository
 
 ```bash
-git clone [YOUR_REPO_URL_HERE]
+git clone https://github.com/krisss96/myshowcaseportfolio.git
 cd showcase-portfolio
 ```
 ### 2. Install dependencies
