@@ -32,20 +32,19 @@ html, body {
 
 /* Scrolling effect */
 
+main {
+    scroll-snap-type: y mandatory; /* turns entire document into a scroll snapping container */
+}
 .sticky-section {
-    position: sticky;
-    top: 0;
-    height: 100vh;
+    min-height: 100vh; /* each section takes full viewport height, while allowing it to grow bigger if needed */
     width: 100%;
-    overflow-y: auto; /* Enables vertical scrolling within each section; allow scrolling down the content fully before the main page scrolls to the next section. */
-    scroll-snap-align: start; /* Each section will snap to the start of the viewport when scrolling */
-
+    scroll-snap-align: start; /* each section snaps to the start -top of the viewport */
 }
 
-/* Hide the internal scrollbar, while still allowing the scroll functionality */
-.sticky-section::-webkit-scrollbar {
-    display: none;
+.sticky-section::-webkit-scrollbar { /* hides scrollbar for Webkit browsers */
+    display: initial;
 }
+
 .sticky-section {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -66,6 +65,33 @@ html, body {
     color: #333333;
 }
 
+
+#home .bg-spot {
+    position: absolute;
+    left: 2%;
+    top: 105%;
+    width: 60rem;
+    height: 60rem;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 50% 50%,
+    rgb(32, 5, 5) 0%,
+    rgb(32, 5, 5) 2%,
+    rgb(32, 5, 5) 25%,
+        rgba(8, 8, 8, 0) 80%);
+
+    filter: blur(102px);
+    mix-blend-mode: normal;
+}
+
+
+#home > *:not(.bg-spot) {
+    position: relative;
+    z-index: 5;
+}
+
 #projects.section-background {
     --spot-x: 80%;
     --spot-y: 70%;
@@ -74,6 +100,7 @@ html, body {
 #about.section-background {
     --spot-x: 60%;
     --spot-y: 20%;
+    font-size: 10rem;
 }
 
 #contacts.section-background {
@@ -89,12 +116,12 @@ html, body {
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    user-select: none;
 }
 
 .navbar-links > li {
     display: inline-block;
-    margin-right: 2rem;
+    margin-right: 1rem;
     margin-left: 0;
 }
 
@@ -104,8 +131,8 @@ html, body {
 
 .navbar-links a {
     display: inline-block;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 
 #navbar-bg {
@@ -141,6 +168,7 @@ html, body {
     opacity: 0;
     transition: transform 2s ease, opacity 2s ease; - not used for now*/
     font-family: 'Fasdeco', sans-serif;
+    user-select: none;
 }
 
 #sub-main {
@@ -149,6 +177,7 @@ html, body {
     align-items: flex-start;
     gap:2rem;
     margin-top: 1rem;
+    user-select: none;
 }
 #im-line {
 
@@ -161,11 +190,12 @@ html, body {
 }
 
 #badge-unit {
-    margin-left: -25vw;
+    margin-left: -24.5vw;
     z-index: 20;
     margin-top: -6rem;
     width: 35vw;
     height: 45vh;
+    user-select: none;
 }
 
 #badgestring {

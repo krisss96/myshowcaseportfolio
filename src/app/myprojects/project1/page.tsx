@@ -18,7 +18,7 @@ export default function Page1() {
                 <div className={styles.headercontainer}>
                     <h1 className={styles.projectheader}>Virtual Gallery</h1>
                     <h2 className={styles.projectsub}>
-                        An immersive virtual gallery with a curated collection of Renaissance paintings
+                        "An immersive virtual gallery with a curated collection of Renaissance paintings"
                     </h2>
                 </div>
             </div>

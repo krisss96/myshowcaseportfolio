@@ -26,9 +26,8 @@ export default function Navbar() {
             {/* w-16 h-16 - sets width and height to 4rem (64px) */}
             {/* priority - ensures the img is prioritized */}
 
-          <ul className="flex items-center ml-auto navbar-links" style={{ gap: '1rem', columnGap: '1rem' }}>
+          <ul className="flex items-center ml-auto navbar-links" style={{ gap: '0rem', columnGap: '0rem' }}>
               {/* ml-auto - pushes the links to the right */}
-              {/* navbar-links - custom class for additional styling if needed */}
             <li className="inline-block">
               <a href="#projects" className="px-3 py-1  text-black font-[Afante]">PROJECTS</a>
             </li>
